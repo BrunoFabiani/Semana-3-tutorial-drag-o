@@ -14,11 +14,12 @@ class FlappyDragon extends Phaser.Scene {
     preload() {
         this.load.image('bg', 'assets/green hill.png');
         this.load.image('player', 'assets/robotinik.png');
-        this.load.image('concrete', 'assets/blocoConcretoMario.png');
+        
         this.load.image('turbo', 'assets/turbo.png');
         this.load.image('gameOver', 'assets/gameover.png');
         this.load.image('restart', 'assets/restart.png');
         this.load.image('coin', 'assets/moedaFeia.png');
+        this.load.image('concrete', 'assets/blocoConcretoMario.png');
     }
 
     // Criação de elementos e configurações iniciais da cena
@@ -28,12 +29,12 @@ class FlappyDragon extends Phaser.Scene {
 
         
         // Adiciona o obstáculo, o concreto
-        this.concrete = this.physics.add.staticImage(this.game.config.width / 2, this.game.config.height / 2, 'concrete').setScale(0.08)
+        
         
         // Adiciona o turbo que acompanha o player
         this.fire = this.add.sprite(0, 0, 'turbo');
         this.fire.setVisible(false);
-
+        this.concrete = this.physics.add.staticImage(this.game.config.width / 2, this.game.config.height / 2, 'concrete').setScale(0.08)
         // Adiciona o player
         this.player = this.physics.add.sprite(this.game.config.width / 2, this.game.config.height / 6, 'player').setScale(0.05);
         this.player.setCollideWorldBounds(true);
